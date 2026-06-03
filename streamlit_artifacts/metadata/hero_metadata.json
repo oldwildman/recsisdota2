@@ -1,0 +1,647 @@
+[
+    {
+        "hero_id": 1,
+        "hero_name": "Anti-Mage",
+        "normalized_name": "anti mage"
+    },
+    {
+        "hero_id": 2,
+        "hero_name": "Axe",
+        "normalized_name": "axe"
+    },
+    {
+        "hero_id": 3,
+        "hero_name": "Bane",
+        "normalized_name": "bane"
+    },
+    {
+        "hero_id": 4,
+        "hero_name": "Bloodseeker",
+        "normalized_name": "bloodseeker"
+    },
+    {
+        "hero_id": 5,
+        "hero_name": "Crystal Maiden",
+        "normalized_name": "crystal maiden"
+    },
+    {
+        "hero_id": 6,
+        "hero_name": "Drow Ranger",
+        "normalized_name": "drow ranger"
+    },
+    {
+        "hero_id": 7,
+        "hero_name": "Earthshaker",
+        "normalized_name": "earthshaker"
+    },
+    {
+        "hero_id": 8,
+        "hero_name": "Juggernaut",
+        "normalized_name": "juggernaut"
+    },
+    {
+        "hero_id": 9,
+        "hero_name": "Mirana",
+        "normalized_name": "mirana"
+    },
+    {
+        "hero_id": 10,
+        "hero_name": "Morphling",
+        "normalized_name": "morphling"
+    },
+    {
+        "hero_id": 11,
+        "hero_name": "Shadow Fiend",
+        "normalized_name": "shadow fiend"
+    },
+    {
+        "hero_id": 12,
+        "hero_name": "Phantom Lancer",
+        "normalized_name": "phantom lancer"
+    },
+    {
+        "hero_id": 13,
+        "hero_name": "Puck",
+        "normalized_name": "puck"
+    },
+    {
+        "hero_id": 14,
+        "hero_name": "Pudge",
+        "normalized_name": "pudge"
+    },
+    {
+        "hero_id": 15,
+        "hero_name": "Razor",
+        "normalized_name": "razor"
+    },
+    {
+        "hero_id": 16,
+        "hero_name": "Sand King",
+        "normalized_name": "sand king"
+    },
+    {
+        "hero_id": 17,
+        "hero_name": "Storm Spirit",
+        "normalized_name": "storm spirit"
+    },
+    {
+        "hero_id": 18,
+        "hero_name": "Sven",
+        "normalized_name": "sven"
+    },
+    {
+        "hero_id": 19,
+        "hero_name": "Tiny",
+        "normalized_name": "tiny"
+    },
+    {
+        "hero_id": 20,
+        "hero_name": "Vengeful Spirit",
+        "normalized_name": "vengeful spirit"
+    },
+    {
+        "hero_id": 21,
+        "hero_name": "Windranger",
+        "normalized_name": "windranger"
+    },
+    {
+        "hero_id": 22,
+        "hero_name": "Zeus",
+        "normalized_name": "zeus"
+    },
+    {
+        "hero_id": 23,
+        "hero_name": "Kunkka",
+        "normalized_name": "kunkka"
+    },
+    {
+        "hero_id": 25,
+        "hero_name": "Lina",
+        "normalized_name": "lina"
+    },
+    {
+        "hero_id": 26,
+        "hero_name": "Lion",
+        "normalized_name": "lion"
+    },
+    {
+        "hero_id": 27,
+        "hero_name": "Shadow Shaman",
+        "normalized_name": "shadow shaman"
+    },
+    {
+        "hero_id": 28,
+        "hero_name": "Slardar",
+        "normalized_name": "slardar"
+    },
+    {
+        "hero_id": 29,
+        "hero_name": "Tidehunter",
+        "normalized_name": "tidehunter"
+    },
+    {
+        "hero_id": 30,
+        "hero_name": "Witch Doctor",
+        "normalized_name": "witch doctor"
+    },
+    {
+        "hero_id": 31,
+        "hero_name": "Lich",
+        "normalized_name": "lich"
+    },
+    {
+        "hero_id": 32,
+        "hero_name": "Riki",
+        "normalized_name": "riki"
+    },
+    {
+        "hero_id": 33,
+        "hero_name": "Enigma",
+        "normalized_name": "enigma"
+    },
+    {
+        "hero_id": 34,
+        "hero_name": "Tinker",
+        "normalized_name": "tinker"
+    },
+    {
+        "hero_id": 35,
+        "hero_name": "Sniper",
+        "normalized_name": "sniper"
+    },
+    {
+        "hero_id": 36,
+        "hero_name": "Necrophos",
+        "normalized_name": "necrophos"
+    },
+    {
+        "hero_id": 37,
+        "hero_name": "Warlock",
+        "normalized_name": "warlock"
+    },
+    {
+        "hero_id": 38,
+        "hero_name": "Beastmaster",
+        "normalized_name": "beastmaster"
+    },
+    {
+        "hero_id": 39,
+        "hero_name": "Queen of Pain",
+        "normalized_name": "queen of pain"
+    },
+    {
+        "hero_id": 40,
+        "hero_name": "Venomancer",
+        "normalized_name": "venomancer"
+    },
+    {
+        "hero_id": 41,
+        "hero_name": "Faceless Void",
+        "normalized_name": "faceless void"
+    },
+    {
+        "hero_id": 42,
+        "hero_name": "Wraith King",
+        "normalized_name": "wraith king"
+    },
+    {
+        "hero_id": 43,
+        "hero_name": "Death Prophet",
+        "normalized_name": "death prophet"
+    },
+    {
+        "hero_id": 44,
+        "hero_name": "Phantom Assassin",
+        "normalized_name": "phantom assassin"
+    },
+    {
+        "hero_id": 45,
+        "hero_name": "Pugna",
+        "normalized_name": "pugna"
+    },
+    {
+        "hero_id": 46,
+        "hero_name": "Templar Assassin",
+        "normalized_name": "templar assassin"
+    },
+    {
+        "hero_id": 47,
+        "hero_name": "Viper",
+        "normalized_name": "viper"
+    },
+    {
+        "hero_id": 48,
+        "hero_name": "Luna",
+        "normalized_name": "luna"
+    },
+    {
+        "hero_id": 49,
+        "hero_name": "Dragon Knight",
+        "normalized_name": "dragon knight"
+    },
+    {
+        "hero_id": 50,
+        "hero_name": "Dazzle",
+        "normalized_name": "dazzle"
+    },
+    {
+        "hero_id": 51,
+        "hero_name": "Clockwerk",
+        "normalized_name": "clockwerk"
+    },
+    {
+        "hero_id": 52,
+        "hero_name": "Leshrac",
+        "normalized_name": "leshrac"
+    },
+    {
+        "hero_id": 53,
+        "hero_name": "Nature's Prophet",
+        "normalized_name": "nature's prophet"
+    },
+    {
+        "hero_id": 54,
+        "hero_name": "Lifestealer",
+        "normalized_name": "lifestealer"
+    },
+    {
+        "hero_id": 55,
+        "hero_name": "Dark Seer",
+        "normalized_name": "dark seer"
+    },
+    {
+        "hero_id": 56,
+        "hero_name": "Clinkz",
+        "normalized_name": "clinkz"
+    },
+    {
+        "hero_id": 57,
+        "hero_name": "Omniknight",
+        "normalized_name": "omniknight"
+    },
+    {
+        "hero_id": 58,
+        "hero_name": "Enchantress",
+        "normalized_name": "enchantress"
+    },
+    {
+        "hero_id": 59,
+        "hero_name": "Huskar",
+        "normalized_name": "huskar"
+    },
+    {
+        "hero_id": 60,
+        "hero_name": "Night Stalker",
+        "normalized_name": "night stalker"
+    },
+    {
+        "hero_id": 61,
+        "hero_name": "Broodmother",
+        "normalized_name": "broodmother"
+    },
+    {
+        "hero_id": 62,
+        "hero_name": "Bounty Hunter",
+        "normalized_name": "bounty hunter"
+    },
+    {
+        "hero_id": 63,
+        "hero_name": "Weaver",
+        "normalized_name": "weaver"
+    },
+    {
+        "hero_id": 64,
+        "hero_name": "Jakiro",
+        "normalized_name": "jakiro"
+    },
+    {
+        "hero_id": 65,
+        "hero_name": "Batrider",
+        "normalized_name": "batrider"
+    },
+    {
+        "hero_id": 66,
+        "hero_name": "Chen",
+        "normalized_name": "chen"
+    },
+    {
+        "hero_id": 67,
+        "hero_name": "Spectre",
+        "normalized_name": "spectre"
+    },
+    {
+        "hero_id": 68,
+        "hero_name": "Ancient Apparition",
+        "normalized_name": "ancient apparition"
+    },
+    {
+        "hero_id": 69,
+        "hero_name": "Doom",
+        "normalized_name": "doom"
+    },
+    {
+        "hero_id": 70,
+        "hero_name": "Ursa",
+        "normalized_name": "ursa"
+    },
+    {
+        "hero_id": 71,
+        "hero_name": "Spirit Breaker",
+        "normalized_name": "spirit breaker"
+    },
+    {
+        "hero_id": 72,
+        "hero_name": "Gyrocopter",
+        "normalized_name": "gyrocopter"
+    },
+    {
+        "hero_id": 73,
+        "hero_name": "Alchemist",
+        "normalized_name": "alchemist"
+    },
+    {
+        "hero_id": 74,
+        "hero_name": "Invoker",
+        "normalized_name": "invoker"
+    },
+    {
+        "hero_id": 75,
+        "hero_name": "Silencer",
+        "normalized_name": "silencer"
+    },
+    {
+        "hero_id": 76,
+        "hero_name": "Outworld Devourer",
+        "normalized_name": "outworld devourer"
+    },
+    {
+        "hero_id": 77,
+        "hero_name": "Lycan",
+        "normalized_name": "lycan"
+    },
+    {
+        "hero_id": 78,
+        "hero_name": "Brewmaster",
+        "normalized_name": "brewmaster"
+    },
+    {
+        "hero_id": 79,
+        "hero_name": "Shadow Demon",
+        "normalized_name": "shadow demon"
+    },
+    {
+        "hero_id": 80,
+        "hero_name": "Lone Druid",
+        "normalized_name": "lone druid"
+    },
+    {
+        "hero_id": 81,
+        "hero_name": "Chaos Knight",
+        "normalized_name": "chaos knight"
+    },
+    {
+        "hero_id": 82,
+        "hero_name": "Meepo",
+        "normalized_name": "meepo"
+    },
+    {
+        "hero_id": 83,
+        "hero_name": "Treant Protector",
+        "normalized_name": "treant protector"
+    },
+    {
+        "hero_id": 84,
+        "hero_name": "Ogre Magi",
+        "normalized_name": "ogre magi"
+    },
+    {
+        "hero_id": 85,
+        "hero_name": "Undying",
+        "normalized_name": "undying"
+    },
+    {
+        "hero_id": 86,
+        "hero_name": "Rubick",
+        "normalized_name": "rubick"
+    },
+    {
+        "hero_id": 87,
+        "hero_name": "Disruptor",
+        "normalized_name": "disruptor"
+    },
+    {
+        "hero_id": 88,
+        "hero_name": "Nyx Assassin",
+        "normalized_name": "nyx assassin"
+    },
+    {
+        "hero_id": 89,
+        "hero_name": "Naga Siren",
+        "normalized_name": "naga siren"
+    },
+    {
+        "hero_id": 90,
+        "hero_name": "Keeper of the Light",
+        "normalized_name": "keeper of the light"
+    },
+    {
+        "hero_id": 91,
+        "hero_name": "Io",
+        "normalized_name": "io"
+    },
+    {
+        "hero_id": 92,
+        "hero_name": "Visage",
+        "normalized_name": "visage"
+    },
+    {
+        "hero_id": 93,
+        "hero_name": "Slark",
+        "normalized_name": "slark"
+    },
+    {
+        "hero_id": 94,
+        "hero_name": "Medusa",
+        "normalized_name": "medusa"
+    },
+    {
+        "hero_id": 95,
+        "hero_name": "Troll Warlord",
+        "normalized_name": "troll warlord"
+    },
+    {
+        "hero_id": 96,
+        "hero_name": "Centaur Warrunner",
+        "normalized_name": "centaur warrunner"
+    },
+    {
+        "hero_id": 97,
+        "hero_name": "Magnus",
+        "normalized_name": "magnus"
+    },
+    {
+        "hero_id": 98,
+        "hero_name": "Timbersaw",
+        "normalized_name": "timbersaw"
+    },
+    {
+        "hero_id": 99,
+        "hero_name": "Bristleback",
+        "normalized_name": "bristleback"
+    },
+    {
+        "hero_id": 100,
+        "hero_name": "Tusk",
+        "normalized_name": "tusk"
+    },
+    {
+        "hero_id": 101,
+        "hero_name": "Skywrath Mage",
+        "normalized_name": "skywrath mage"
+    },
+    {
+        "hero_id": 102,
+        "hero_name": "Abaddon",
+        "normalized_name": "abaddon"
+    },
+    {
+        "hero_id": 103,
+        "hero_name": "Elder Titan",
+        "normalized_name": "elder titan"
+    },
+    {
+        "hero_id": 104,
+        "hero_name": "Legion Commander",
+        "normalized_name": "legion commander"
+    },
+    {
+        "hero_id": 105,
+        "hero_name": "Techies",
+        "normalized_name": "techies"
+    },
+    {
+        "hero_id": 106,
+        "hero_name": "Ember Spirit",
+        "normalized_name": "ember spirit"
+    },
+    {
+        "hero_id": 107,
+        "hero_name": "Earth Spirit",
+        "normalized_name": "earth spirit"
+    },
+    {
+        "hero_id": 108,
+        "hero_name": "Underlord",
+        "normalized_name": "underlord"
+    },
+    {
+        "hero_id": 109,
+        "hero_name": "Terrorblade",
+        "normalized_name": "terrorblade"
+    },
+    {
+        "hero_id": 110,
+        "hero_name": "Phoenix",
+        "normalized_name": "phoenix"
+    },
+    {
+        "hero_id": 111,
+        "hero_name": "Oracle",
+        "normalized_name": "oracle"
+    },
+    {
+        "hero_id": 112,
+        "hero_name": "Winter Wyvern",
+        "normalized_name": "winter wyvern"
+    },
+    {
+        "hero_id": 113,
+        "hero_name": "Arc Warden",
+        "normalized_name": "arc warden"
+    },
+    {
+        "hero_id": 114,
+        "hero_name": "Monkey King",
+        "normalized_name": "monkey king"
+    },
+    {
+        "hero_id": 119,
+        "hero_name": "Dark Willow",
+        "normalized_name": "dark willow"
+    },
+    {
+        "hero_id": 120,
+        "hero_name": "Pangolier",
+        "normalized_name": "pangolier"
+    },
+    {
+        "hero_id": 121,
+        "hero_name": "Grimstroke",
+        "normalized_name": "grimstroke"
+    },
+    {
+        "hero_id": 123,
+        "hero_name": "Hoodwink",
+        "normalized_name": "hoodwink"
+    },
+    {
+        "hero_id": 126,
+        "hero_name": "Void Spirit",
+        "normalized_name": "void spirit"
+    },
+    {
+        "hero_id": 128,
+        "hero_name": "Snapfire",
+        "normalized_name": "snapfire"
+    },
+    {
+        "hero_id": 129,
+        "hero_name": "Mars",
+        "normalized_name": "mars"
+    },
+    {
+        "hero_id": 131,
+        "hero_name": "Ring Master",
+        "normalized_name": "ring master"
+    },
+    {
+        "hero_id": 135,
+        "hero_name": "Dawnbreaker",
+        "normalized_name": "dawnbreaker"
+    },
+    {
+        "hero_id": 136,
+        "hero_name": "Marci",
+        "normalized_name": "marci"
+    },
+    {
+        "hero_id": 137,
+        "hero_name": "Primal Beast",
+        "normalized_name": "primal beast"
+    },
+    {
+        "hero_id": 138,
+        "hero_name": "Muerta",
+        "normalized_name": "muerta"
+    },
+    {
+        "hero_id": 145,
+        "hero_name": "Kez",
+        "normalized_name": "kez"
+    },
+    {
+        "hero_id": 155,
+        "hero_name": "Largo",
+        "normalized_name": "largo"
+    },
+    {
+        "hero_id": 156,
+        "hero_name": "Outworld_Destroyer",
+        "normalized_name": "outworld destroyer"
+    },
+    {
+        "hero_id": 157,
+        "hero_name": "Ringmaster",
+        "normalized_name": "ringmaster"
+    }
+]

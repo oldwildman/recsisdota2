@@ -1,0 +1,24 @@
+{
+    "embedding_features": 128,
+    "model_type": "LightGBM Ranker",
+    "ranking_features": [
+        "candidate_hero",
+        "role_encoded",
+        "lane_encoded",
+        "avg_synergy",
+        "max_synergy",
+        "avg_counter",
+        "worst_counter",
+        "pagerank",
+        "degree",
+        "clustering",
+        "neighbors",
+        "patch"
+    ],
+    "weights": {
+        "embedding_weight": 0.35,
+        "synergy_weight": 0.4,
+        "counter_weight": 0.25
+    },
+    "top_k_default": 10
+}

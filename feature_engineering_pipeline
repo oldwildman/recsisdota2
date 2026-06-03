@@ -1,0 +1,19 @@
+// Feature Engineering
+digraph {
+	rankdir=TB
+	A [label="Hero Statistics"]
+	B [label="Synergy Matrix"]
+	C [label="Counter Matrix"]
+	D [label="Role Features"]
+	E [label="Lane Features"]
+	F [label="Graph Features"]
+	G [label=Embeddings]
+	H [label="Feature Vector"]
+	A -> H
+	B -> H
+	C -> H
+	D -> H
+	E -> H
+	F -> H
+	G -> H
+}

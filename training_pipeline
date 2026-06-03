@@ -1,0 +1,23 @@
+// Training Pipeline
+digraph {
+	rankdir=LR
+	A [label="OpenDota API"]
+	B [label="Raw Match Data"]
+	C [label="Data Cleaning"]
+	D [label="Feature Engineering"]
+	E [label="Graph Features"]
+	F [label="Hero Embeddings"]
+	G [label="Hard Negative Sampling"]
+	H [label="Training Dataset"]
+	I [label="LightGBM Ranker"]
+	J [label="Trained Model"]
+	A -> B
+	B -> C
+	C -> D
+	D -> E
+	E -> F
+	F -> G
+	G -> H
+	H -> I
+	I -> J
+}

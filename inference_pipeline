@@ -1,0 +1,19 @@
+// Inference Pipeline
+digraph {
+	rankdir=LR
+	A [label="Current Draft"]
+	B [label="Feature Generator"]
+	C [label="Graph Features"]
+	D [label="Embedding Features"]
+	E [label="LightGBM Ranker"]
+	F [label="Candidate Scoring"]
+	G [label="Top-K Ranking"]
+	H [label="UI Recommendations"]
+	A -> B
+	B -> C
+	C -> D
+	D -> E
+	E -> F
+	F -> G
+	G -> H
+}

@@ -1,0 +1,439 @@
+PROJECT STRUCTURE: E:\RecSisDota2
+================================================================================
+
+├── all
+│   ├── data
+│   │   ├── processed
+│   │   │   ├── hero_stats.csv
+│   │   │   └── heroes.csv
+│   │   └── raw
+│   ├── dota-2-full-hero-list.zip
+│   ├── dota_dataset_named.csv
+│   ├── dota_recommendation_project.zip
+│   ├── findmatch.ipynb
+│   ├── hero_counters.csv
+│   ├── hero_games_stats.csv
+│   ├── hero_pairs.csv
+│   ├── heroes_roles.csv
+│   ├── mainmain.ipynb
+│   ├── match_ids.txt
+│   ├── progress.txt
+│   ├── README.md
+│   ├── user_heroes.csv
+│   └── users.csv
+├── graphs
+├── hero_faces
+│   ├── Abaddon.cur
+│   ├── Alchemist.cur
+│   ├── Ancient Apparition.cur
+│   ├── Anti Mage.cur
+│   ├── Arc Warden.cur
+│   ├── Axe.cur
+│   ├── Bane.cur
+│   ├── Batrider.cur
+│   ├── Beastmaster.cur
+│   ├── Bloodseeker.cur
+│   ├── Bounty Hunter.cur
+│   ├── Brewmaster.cur
+│   ├── Bristleback.cur
+│   ├── Broodmother.cur
+│   ├── Centaur Warrunner.cur
+│   ├── Chaos Knight.cur
+│   ├── Chen.cur
+│   ├── Clinkz.cur
+│   ├── Clockwerk.cur
+│   ├── Crystal Maiden.cur
+│   ├── Dark Seer.cur
+│   ├── Dark Willow.cur
+│   ├── Dawnbreaker.cur
+│   ├── Dazzle.cur
+│   ├── Death Prophet.cur
+│   ├── Disruptor.cur
+│   ├── Doom.cur
+│   ├── dota-2-full-hero-list.crs
+│   ├── Dragon Knight.cur
+│   ├── Drow Ranger (Arcana 1) .cur
+│   ├── Drow Ranger (Arcana 2) .cur
+│   ├── Drow Ranger.cur
+│   ├── Earth Spirit.cur
+│   ├── Earthshaker.cur
+│   ├── Elder Titan.cur
+│   ├── Ember Spirit.cur
+│   ├── Enchantress.cur
+│   ├── Enigma.cur
+│   ├── Faceless Void (Arcana 1).cur
+│   ├── Faceless Void (Arcana 2).cur
+│   ├── Faceless Void (New).cur
+│   ├── Faceless Void (Old).cur
+│   ├── Gyrocopter.cur
+│   ├── Hoodwink.cur
+│   ├── Huskar.cur
+│   ├── Invoker.cur
+│   ├── Io (Arcana).cur
+│   ├── Io-Wisp.cur
+│   ├── Jakiro.cur
+│   ├── Juggernaut.cur
+│   ├── Keeper of the light.cur
+│   ├── Kunkka.cur
+│   ├── Legion Commander (Arcana).cur
+│   ├── Legion Commander.cur
+│   ├── Leshrac.cur
+│   ├── Lich.cur
+│   ├── Lifestealer.cur
+│   ├── Lina (Arcana).cur
+│   ├── Lina.cur
+│   ├── Lion.cur
+│   ├── Lone Druid.cur
+│   ├── Luna.cur
+│   ├── Lycan.cur
+│   ├── Magnus.cur
+│   ├── Marci.cur
+│   ├── Mars.cur
+│   ├── Medusa.cur
+│   ├── Meepo.cur
+│   ├── Mirana of Nightsilver Persona.cur
+│   ├── Mirana.cur
+│   ├── Monkey King (Arcana).cur
+│   ├── Monkey King.cur
+│   ├── Morphling.cur
+│   ├── Muerta.cur
+│   ├── Naga Siren.cur
+│   ├── Nature's Prophet.cur
+│   ├── Necrophos-Necrolyte.cur
+│   ├── Night Stalker.cur
+│   ├── Nyx Assassin.cur
+│   ├── Ogre Magi.cur
+│   ├── Omniknight.cur
+│   ├── Outworld Destroyer.cur
+│   ├── Phantom Assassin (Arcana).cur
+│   ├── Phantom Assassin.cur
+│   ├── Phantom Lancer.cur
+│   ├── Pheonix.cur
+│   ├── Primal Beast.cur
+│   ├── Puck.cur
+│   ├── Pudge (Arcana).cur
+│   ├── Pudge.cur
+│   ├── Pugna.cur
+│   ├── Queen of Pain (Arcana 1) .cur
+│   ├── Queen of Pain (Arcana 2) .cur
+│   ├── Queen of pain.cur
+│   ├── Razor (Arcana 1).cur
+│   ├── Razor (Arcana 2).cur
+│   ├── Razor.cur
+│   ├── readme.txt
+│   ├── Riki.cur
+│   ├── Rubick.cur
+│   ├── Sand King.cur
+│   ├── Shadow Demon.cur
+│   ├── Shadow Fiend (Arcana).cur
+│   ├── Shadow Fiend (New).cur
+│   ├── Shadow Fiend (Old).cur
+│   ├── Shadow Shaman.cur
+│   ├── Silencer.cur
+│   ├── Skeleton King.cur
+│   ├── Skywrath Mage.cur
+│   ├── Slardar (Old).cur
+│   ├── Slark.cur
+│   ├── Snapfire.cur
+│   ├── Sniper.cur
+│   ├── Spectre (Arcana 1).cur
+│   ├── Spectre (Arcana 2) .cur
+│   ├── Spectre.cur
+│   ├── Spirit Breaker.cur
+│   ├── Storm Spirit.cur
+│   ├── Sven.cur
+│   ├── Techies (Arcana).cur
+│   ├── Techies.cur
+│   ├── Templar Assassin.cur
+│   ├── Terrorblade.cur
+│   ├── Tidehunter.cur
+│   ├── Timbersaw.cur
+│   ├── Tinker.cur
+│   ├── Tiny.cur
+│   ├── Treant Protector.cur
+│   ├── Troll Warlord.cur
+│   ├── Tusk.cur
+│   ├── Underlord.cur
+│   ├── Undying.cur
+│   ├── Ursa.cur
+│   ├── Vengeful Spirit.cur
+│   ├── Venomancer (New).cur
+│   ├── Venomancer (Old).cur
+│   ├── Viper (Old).cur
+│   ├── Visage.cur
+│   ├── Warlock.cur
+│   ├── Weaver.cur
+│   ├── Windranger (Arcana 1).cur
+│   ├── Windranger (Arcana 2).cur
+│   ├── Windranger-Windrunner.cur
+│   ├── Witch Doctor.cur
+│   ├── Wraith King (Arcana).cur
+│   ├── Wraith King.cur
+│   └── Zeus.cur
+├── hero_images
+│   ├── 1.png
+│   ├── 10.png
+│   ├── 100.png
+│   ├── 101.png
+│   ├── 102.png
+│   ├── 103.png
+│   ├── 104.png
+│   ├── 105.png
+│   ├── 106.png
+│   ├── 107.png
+│   ├── 108.png
+│   ├── 109.png
+│   ├── 11.png
+│   ├── 110.png
+│   ├── 111.png
+│   ├── 112.png
+│   ├── 113.png
+│   ├── 114.png
+│   ├── 119.png
+│   ├── 12.png
+│   ├── 120.png
+│   ├── 121.png
+│   ├── 123.png
+│   ├── 126.png
+│   ├── 128.png
+│   ├── 129.png
+│   ├── 13.png
+│   ├── 131.png
+│   ├── 135.png
+│   ├── 136.png
+│   ├── 137.png
+│   ├── 138.png
+│   ├── 14.png
+│   ├── 145.png
+│   ├── 15.png
+│   ├── 155.png
+│   ├── 16.png
+│   ├── 17.png
+│   ├── 18.png
+│   ├── 19.png
+│   ├── 2.png
+│   ├── 20.png
+│   ├── 21.png
+│   ├── 22.png
+│   ├── 23.png
+│   ├── 25.png
+│   ├── 26.png
+│   ├── 27.png
+│   ├── 28.png
+│   ├── 29.png
+│   ├── 3.png
+│   ├── 30.png
+│   ├── 31.png
+│   ├── 32.png
+│   ├── 33.png
+│   ├── 34.png
+│   ├── 35.png
+│   ├── 36.png
+│   ├── 37.png
+│   ├── 38.png
+│   ├── 39.png
+│   ├── 4.png
+│   ├── 40.png
+│   ├── 41.png
+│   ├── 42.png
+│   ├── 43.png
+│   ├── 44.png
+│   ├── 45.png
+│   ├── 46.png
+│   ├── 47.png
+│   ├── 48.png
+│   ├── 49.png
+│   ├── 5.png
+│   ├── 50.png
+│   ├── 51.png
+│   ├── 52.png
+│   ├── 53.png
+│   ├── 54.png
+│   ├── 55.png
+│   ├── 56.png
+│   ├── 57.png
+│   ├── 58.png
+│   ├── 59.png
+│   ├── 6.png
+│   ├── 60.png
+│   ├── 61.png
+│   ├── 62.png
+│   ├── 63.png
+│   ├── 64.png
+│   ├── 65.png
+│   ├── 66.png
+│   ├── 67.png
+│   ├── 68.png
+│   ├── 69.png
+│   ├── 7.png
+│   ├── 70.png
+│   ├── 71.png
+│   ├── 72.png
+│   ├── 73.png
+│   ├── 74.png
+│   ├── 75.png
+│   ├── 76.png
+│   ├── 77.png
+│   ├── 78.png
+│   ├── 79.png
+│   ├── 8.png
+│   ├── 80.png
+│   ├── 81.png
+│   ├── 82.png
+│   ├── 83.png
+│   ├── 84.png
+│   ├── 85.png
+│   ├── 86.png
+│   ├── 87.png
+│   ├── 88.png
+│   ├── 89.png
+│   ├── 9.png
+│   ├── 90.png
+│   ├── 91.png
+│   ├── 92.png
+│   ├── 93.png
+│   ├── 94.png
+│   ├── 95.png
+│   ├── 96.png
+│   ├── 97.png
+│   ├── 98.png
+│   └── 99.png
+├── models
+│   ├── lgbm_ranker.pkl
+│   ├── lightgbm_hard_negative.pkl
+│   └── lightgbm_recommender.pkl
+├── project
+│   ├── assets
+│   │   ├── backgrounds
+│   │   ├── css
+│   │   └── icons
+│   ├── components
+│   │   ├── pages
+│   │   ├── __init__.py
+│   │   ├── analytics_components.py
+│   │   ├── auth_components.py
+│   │   └── draft_layout.py
+│   ├── data
+│   │   ├── processed
+│   │   │   ├── hard_chunks
+│   │   │   │   ├── chunk_0.parquet
+│   │   │   │   ├── chunk_1.parquet
+│   │   │   │   ├── chunk_10.parquet
+│   │   │   │   ├── chunk_11.parquet
+│   │   │   │   ├── chunk_12.parquet
+│   │   │   │   ├── chunk_13.parquet
+│   │   │   │   ├── chunk_14.parquet
+│   │   │   │   ├── chunk_15.parquet
+│   │   │   │   ├── chunk_16.parquet
+│   │   │   │   ├── chunk_17.parquet
+│   │   │   │   ├── chunk_18.parquet
+│   │   │   │   ├── chunk_19.parquet
+│   │   │   │   ├── chunk_2.parquet
+│   │   │   │   ├── chunk_20.parquet
+│   │   │   │   ├── chunk_21.parquet
+│   │   │   │   ├── chunk_22.parquet
+│   │   │   │   ├── chunk_23.parquet
+│   │   │   │   ├── chunk_24.parquet
+│   │   │   │   ├── chunk_25.parquet
+│   │   │   │   ├── chunk_26.parquet
+│   │   │   │   ├── chunk_27.parquet
+│   │   │   │   ├── chunk_28.parquet
+│   │   │   │   ├── chunk_29.parquet
+│   │   │   │   ├── chunk_3.parquet
+│   │   │   │   ├── chunk_30.parquet
+│   │   │   │   ├── chunk_31.parquet
+│   │   │   │   ├── chunk_32.parquet
+│   │   │   │   ├── chunk_33.parquet
+│   │   │   │   ├── chunk_34.parquet
+│   │   │   │   ├── chunk_35.parquet
+│   │   │   │   ├── chunk_36.parquet
+│   │   │   │   ├── chunk_37.parquet
+│   │   │   │   ├── chunk_38.parquet
+│   │   │   │   ├── chunk_39.parquet
+│   │   │   │   ├── chunk_4.parquet
+│   │   │   │   ├── chunk_40.parquet
+│   │   │   │   ├── chunk_41.parquet
+│   │   │   │   ├── chunk_42.parquet
+│   │   │   │   ├── chunk_5.parquet
+│   │   │   │   ├── chunk_6.parquet
+│   │   │   │   ├── chunk_7.parquet
+│   │   │   │   ├── chunk_8.parquet
+│   │   │   │   └── chunk_9.parquet
+│   │   │   ├── dataset.csv
+│   │   │   ├── hard_confusion_matrix.png
+│   │   │   ├── hard_feature_importance.png
+│   │   │   ├── hard_negative_samples.parquet
+│   │   │   ├── hard_pr_curve.png
+│   │   │   ├── hard_roc_curve.png
+│   │   │   ├── hero_community_graph.png
+│   │   │   ├── hero_counter_matrix.csv
+│   │   │   ├── hero_embeddings_pca_communities.png
+│   │   │   ├── hero_embeddings_tsne_communities.png
+│   │   │   ├── hero_embeddings_v6.csv
+│   │   │   ├── hero_graph_features.csv
+│   │   │   ├── hero_registry.csv
+│   │   │   ├── hero_retrieval_examples.csv
+│   │   │   ├── hero_roles.csv
+│   │   │   ├── hero_similarities.csv
+│   │   │   ├── hero_stats.csv
+│   │   │   ├── hero_synergy_matrix.csv
+│   │   │   ├── heroes.csv
+│   │   │   ├── ranker_feature_importance.png
+│   │   │   └── training_dataset_hard.parquet
+│   │   └── raw
+│   ├── graphs
+│   │   ├── hero_counter_graph.png
+│   │   └── hero_synergy_graph.png
+│   ├── services
+│   │   ├── __init__.py
+│   │   ├── auth_service.py
+│   │   ├── draft_service.py
+│   │   ├── hero_role_service.py
+│   │   └── recommendation_service.py
+│   ├── utils
+│   │   ├── __init__.py
+│   │   ├── constants.py
+│   │   ├── hero_utils.py
+│   │   ├── loaders.py
+│   │   ├── session_utils.py
+│   │   └── style_utils.py
+│   ├── __init__.py
+│   └── app.py
+├── streamlit_artifacts
+│   ├── config
+│   │   ├── feature_config.json
+│   │   └── streamlit_settings.json
+│   ├── data
+│   ├── hero_faces
+│   ├── metadata
+│   │   ├── hero_lookup.json
+│   │   └── hero_metadata.json
+│   └── models
+│       └── lgbm_ranker.pkl
+├── app.py
+├── beautiful_counter_graph.png
+├── beautiful_synergy_graph.png
+├── Denisov_PM22_3.docx
+├── feature_engineering_pipeline
+├── feature_engineering_pipeline.png
+├── feature_engineering_vertical.png
+├── hero_counter_graph.png
+├── hero_synergy_graph.png
+├── inference_pipeline
+├── inference_pipeline.png
+├── inference_pipeline_vertical.png
+├── mainmain.ipynb
+├── model_training_pipeline
+├── model_training_pipeline.png
+├── ranking_generation_flow
+├── ranking_generation_flow.png
+├── RecSisDota2-master.zip
+├── system_architecture
+├── system_architecture.png
+├── training_pipeline
+├── training_pipeline.png
+├── training_pipeline_vertical.png
+├── user_heroes.csv
+├── users.csv
+├── ~$nisov_PM22_3.docx
+└── ~WRL3523.tmp

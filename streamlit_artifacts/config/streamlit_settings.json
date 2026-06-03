@@ -1,0 +1,10 @@
+{
+    "app_title": "Dota 2 Hero Recommender",
+    "default_top_k": 10,
+    "show_confidence": true,
+    "show_synergy": true,
+    "show_counters": true,
+    "show_embeddings": false,
+    "enable_roles": true,
+    "enable_enemy_analysis": true
+}

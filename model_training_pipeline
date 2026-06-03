@@ -1,0 +1,17 @@
+// Model Training
+digraph {
+	rankdir=LR
+	A [label="Training Dataset"]
+	B [label="Train/Validation Split"]
+	C [label="LightGBM Ranker"]
+	D [label="Hyperparameter Tuning"]
+	E [label="Model Evaluation"]
+	F [label="ROC-AUC / PR-AUC"]
+	G [label="Final Model"]
+	A -> B
+	B -> C
+	C -> D
+	D -> E
+	E -> F
+	F -> G
+}

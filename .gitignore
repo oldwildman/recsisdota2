@@ -1,0 +1,28 @@
+# datasets
+*.zip
+
+dataset_recommend.csv
+dota_dataset1.csv
+dota_dataset2.csv
+dota_dataset_roles.csv
+dota_dataset_roles_final.csv
+
+all/
+project/data/processed/hard_chunks/
+
+training_dataset_hard.parquet
+hard_negative_samples.parquet
+
+# notebooks
+.ipynb_checkpoints/
+
+# python
+__pycache__/
+*.pyc
+
+# venv
+venv/
+.venv/
+
+# cache
+.cache/

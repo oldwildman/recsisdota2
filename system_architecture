@@ -1,0 +1,19 @@
+// System Architecture
+digraph {
+	rankdir=LR
+	A [label="OpenDota API"]
+	B [label="ETL Layer"]
+	C [label="Feature Engineering"]
+	D [label="Graph Analytics"]
+	E [label="Hero Embeddings"]
+	F [label="ML Ranking Engine"]
+	G [label="Inference Layer"]
+	H [label="Streamlit UI"]
+	A -> B
+	B -> C
+	C -> D
+	D -> E
+	E -> F
+	F -> G
+	G -> H
+}

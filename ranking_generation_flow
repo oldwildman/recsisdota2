@@ -1,0 +1,25 @@
+// Ranking Flow
+digraph {
+	rankdir=TB
+	A [label="Candidate Heroes"]
+	B [label="Synergy Score"]
+	C [label="Counter Score"]
+	D [label="Role Score"]
+	E [label="Graph Features"]
+	F [label="Embedding Similarity"]
+	G [label="Feature Aggregation"]
+	H [label="LightGBM Ranking"]
+	I [label="Top Recommendations"]
+	A -> B
+	A -> C
+	A -> D
+	A -> E
+	A -> F
+	B -> G
+	C -> G
+	D -> G
+	E -> G
+	F -> G
+	G -> H
+	H -> I
+}
