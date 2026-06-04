@@ -1,31 +1,67 @@
 import streamlit as st
-
+import base64
+from pathlib import Path
+import streamlit as st
 # =========================================================
 # GLOBAL STYLE SYSTEM
 # =========================================================
 
 def load_global_styles():
 
-    st.markdown(
-        """
-        <style>
+    image_path = (
+        Path(__file__).parent.parent
+        / "assets"
+        / "backgrounds"
+        / "background1.jpg"
+    )
 
-        /* =======================================================
-           GLOBAL
-        ======================================================= */
+    with open(image_path, "rb") as f:
 
-        .stApp {
+        bg_image = base64.b64encode(
+            f.read()
+        ).decode()
 
-            background:
-                radial-gradient(
-                    circle at top left,
-                    #1f1147 0%,
-                    #0b1020 45%,
-                    #05070f 100%
-                );
+    css = """
+    <style>
 
-            color: white;
-        }
+    /* =======================================================
+       GLOBAL
+    ======================================================= */
+
+    .stApp {
+
+        background-image:
+            linear-gradient(
+                rgba(0,0,0,0.82),
+                rgba(0,0,0,0.82)
+            ),
+            url("data:image/jpeg;base64,__BG_IMAGE__");
+
+        background-size: cover;
+
+        background-position: center;
+
+        background-repeat: no-repeat;
+
+        background-attachment: fixed;
+
+        color: white;
+    }
+    /* =======================================================
+   MAIN CONTAINER
+======================================================= */
+
+.main .block-container {
+
+    background: rgba(0,0,0,0.55);
+
+    border-radius: 24px;
+
+    padding: 25px;
+
+    backdrop-filter: blur(8px);
+}
+
 
         /* =======================================================
            REMOVE STREAMLIT UI
@@ -623,14 +659,19 @@ def load_global_styles():
 
         .main-title {
 
-            font-size: 42px;
+    text-align: center;
 
-            font-weight: 900;
+    font-size: 56px;
 
-            color: white;
+    font-weight: 800;
 
-            margin-top: 10px;
-        }
+    margin-bottom: 10px;
+
+    color: white;
+
+    text-shadow:
+        0 0 20px rgba(255,255,255,0.3);
+}
 
         /* =======================================================
            TEAM HEADERS
@@ -775,8 +816,74 @@ div[data-testid="stImage"] img:hover {
             border-radius: 12px;
         }
         
+.win-panel {
 
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin-top: 20px;
+}
+
+.win-radiant {
+
+    color: #22ff88;
+
+    font-size: 34px;
+
+    font-weight: 800;
+
+    min-width: 70px;
+}
+
+.win-dire {
+
+    color: #ff5555;
+
+    font-size: 34px;
+
+    font-weight: 800;
+
+    min-width: 70px;
+
+    text-align: right;
+}
+
+.win-bar {
+
+    flex: 1;
+
+    height: 22px;
+
+    background: rgba(255,255,255,0.1);
+
+    border-radius: 20px;
+
+    overflow: hidden;
+}
+
+.win-bar-radiant {
+
+    height: 100%;
+
+    background: linear-gradient(
+        90deg,
+        #22ff88,
+        #00e5ff
+    );
+}
         </style>
-        """,
+        
+            """
+
+    css = css.replace(
+        "__BG_IMAGE__",
+        bg_image
+    )
+
+    st.markdown(
+        css,
         unsafe_allow_html=True
     )

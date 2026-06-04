@@ -4,7 +4,7 @@ from pathlib import Path
 ROOT_DIR = Path(__file__).resolve().parent.parent
 
 # DATA
-DATA_DIR = ROOT_DIR.parent / "data"
+DATA_DIR = ROOT_DIR / "data"
 RAW_DIR = DATA_DIR / "raw"
 PROCESSED_DIR = DATA_DIR / "processed"
 
@@ -19,8 +19,8 @@ HERO_FACES_DIR = ROOT_DIR.parent / "hero_faces"
 STREAMLIT_ARTIFACTS_DIR = ROOT_DIR.parent / "streamlit_artifacts"
 
 # USER FILES
-USERS_FILE = ROOT_DIR.parent / "users.csv"
-USER_HEROES_FILE = ROOT_DIR.parent / "user_heroes.csv"
+USERS_FILE = PROCESSED_DIR / "users.csv"
+USER_HEROES_FILE = PROCESSED_DIR / "user_heroes.csv"
 
 # CSV FILES
 HEROES_CSV = ROOT_DIR.parent / "heroes.csv"

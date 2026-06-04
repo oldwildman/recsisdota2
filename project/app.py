@@ -1,3 +1,4 @@
+import base64
 import streamlit as st
 
 from utils.style_utils import load_global_styles
@@ -10,15 +11,55 @@ from components.auth_components import render_auth_page
 # =========================================================
 
 st.set_page_config(
-    page_title="Dota Draft AI",
+    page_title="Рекомендательная система Dota 2",
     page_icon="🎮",
     layout="wide",
     initial_sidebar_state="collapsed"
 )
 
 # =========================================================
+# BACKGROUND
+# =========================================================
+
+def set_background():
+
+    image_path = "project/assets/backgrounds/background1.jpg"
+
+    with open(image_path, "rb") as image_file:
+
+        encoded = base64.b64encode(
+            image_file.read()
+        ).decode()
+
+    st.markdown(
+        f"""
+        <style>
+
+        .stApp {{
+
+            background:
+                linear-gradient(
+                    rgba(0, 0, 0, 0.65),
+                    rgba(0, 0, 0, 0.65)
+                ),
+                url("data:image/jpg;base64,{encoded}");
+
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }}
+
+        </style>
+        """,
+        unsafe_allow_html=True
+    )
+
+# =========================================================
 # INIT
 # =========================================================
+
+set_background()
 
 load_global_styles()
 
@@ -35,7 +76,7 @@ if not st.session_state.logged_in:
     st.stop()
 
 # =========================================================
-# MAIN APP
+# SIDEBAR
 # =========================================================
 
 st.sidebar.markdown(
@@ -44,7 +85,7 @@ st.sidebar.markdown(
     """
 )
 
-if st.sidebar.button("Logout"):
+if st.sidebar.button("Выйти"):
 
     st.session_state.logged_in = False
 
@@ -57,7 +98,19 @@ if st.sidebar.button("Logout"):
     st.rerun()
 
 # =========================================================
-# TEMP PLACEHOLDER
+# MAIN APP
+# =========================================================
+
+st.markdown(
+    """
+    <h1 class="main-title">
+        Рекомендательная система выбора героев Dota 2
+    </h1>
+    """,
+    unsafe_allow_html=True
+)
+# =========================================================
+# DRAFT INTERFACE
 # =========================================================
 
 from components.draft_layout import (
@@ -66,6 +119,10 @@ from components.draft_layout import (
 
 render_draft_layout()
 
-st.success("Authentication system connected successfully")
+# =========================================================
+# STATUS
+# =========================================================
 
-st.write("Next step: Draft recommendation interface")
+st.success(
+    "Система успешно запущена"
+)

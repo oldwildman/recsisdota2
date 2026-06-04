@@ -94,7 +94,8 @@ def create_user(account_id, password):
 # =========================================================
 
 def login_user(account_id, password):
-
+    print("USERS FILE =", USERS_FILE)
+    print("EXISTS =", USERS_FILE.exists())
     if not USERS_FILE.exists():
         return False
 

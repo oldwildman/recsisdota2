@@ -15,7 +15,7 @@ HEROES_FILE = "user_heroes.csv"
 IMG_PATH = "hero_images"
 
 # ================= LOAD =================
-heroes_df = pd.read_csv("heroes.csv")
+heroes_df = pd.read_csv("project/data/processed/hero_registry.csv")
 id_to_name = dict(zip(heroes_df["hero_id"], heroes_df["hero_name"]))
 
 model = joblib.load("model_lgbm_final.pkl")

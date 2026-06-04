@@ -1,4 +1,7 @@
 import pandas as pd
+from services.personalization_service import (
+    get_personal_score
+)
 
 from utils.loaders import (
     load_synergy_matrix,
@@ -147,7 +150,7 @@ def calculate_hero_scores(
     # ROLE WEIGHT
     # =====================================================
 
-    role_component = role_score * 3
+    role_component = role_score * 6
 
     # =====================================================
     # FINAL
@@ -200,17 +203,9 @@ def get_recommendations(
     role
 ):
 
-    # =====================================================
-    # LOAD DATA
-    # =====================================================
-
     synergy_df = load_synergy_matrix()
 
     counter_df = load_counter_matrix()
-
-    # =====================================================
-    # BUILD
-    # =====================================================
 
     recommendations = []
 
@@ -236,11 +231,33 @@ def get_recommendations(
             role_score=role_score
         )
 
+        personal_score = get_personal_score(
+            hero_id
+        )
+        print(
+        "hero:",
+        hero_id,
+        "personal:",
+        personal_score
+        )
+        print(
+            hero_id,
+            scores["score"],
+            personal_score,
+            scores["score"] + personal_score
+        )
+
         recommendations.append({
 
             "hero_id": hero_id,
 
             "score": scores["score"],
+
+            "personal_score": personal_score,
+
+            "sort_score":
+                scores["score"]
+                + personal_score,
 
             "synergy": scores["synergy"],
 
@@ -249,15 +266,11 @@ def get_recommendations(
             "role_score": scores["role_score"]
         })
 
-    # =====================================================
-    # SORT
-    # =====================================================
-
     recommendations = sorted(
 
         recommendations,
 
-        key=lambda x: x["score"],
+        key=lambda x: x["sort_score"],
 
         reverse=True
     )

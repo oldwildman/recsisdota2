@@ -23,9 +23,9 @@ def render_auth_page():
     with col2:
 
         tabs = st.tabs([
-            "Login",
-            "Register",
-            "Guest"
+            "Вход в аккаунт",
+            "Регистрация",
+            "Гостевой режим"
         ])
 
         # =====================================================
@@ -34,7 +34,7 @@ def render_auth_page():
 
         with tabs[0]:
 
-            st.markdown("### Welcome Back")
+            st.markdown("### Добро Поажловать")
 
             login_id = st.text_input(
                 "Steam/OpenDota Account ID",
@@ -42,13 +42,13 @@ def render_auth_page():
             )
 
             login_password = st.text_input(
-                "Password",
+                "Пароль",
                 type="password",
                 key="login_password"
             )
 
             if st.button(
-                "LOGIN",
+                "Логин",
                 use_container_width=True
             ):
 
@@ -118,7 +118,7 @@ def render_auth_page():
 
         with tabs[1]:
 
-            st.markdown("### Create Account")
+            st.markdown("### Создать аккаунт")
 
             register_id = st.text_input(
                 "Steam/OpenDota Account ID",
@@ -126,13 +126,13 @@ def render_auth_page():
             )
 
             register_password = st.text_input(
-                "Create Password",
+                "Придумайте пароль",
                 type="password",
                 key="register_password"
             )
 
             if st.button(
-                "REGISTER",
+                "Создать Аккаунт",
                 use_container_width=True
             ):
 
@@ -155,13 +155,13 @@ def render_auth_page():
                 elif len(register_password) < 6:
 
                     st.error(
-                        "Password too short"
+                        "Пароль слишком короткий"
                     )
 
                 elif user_exists(int(register_id)):
 
                     st.error(
-                        "User already exists"
+                        "Пользователь уже сущестует"
                     )
 
                 else:
@@ -225,24 +225,26 @@ def render_auth_page():
 
         with tabs[2]:
 
-            st.markdown("### Continue Without Account")
+            st.markdown("### Продолжить без авторизации")
 
             st.markdown(
-                '''
-                Guest mode includes:
+            '''
+            Доступные возможности:
 
-                ✅ Draft recommendations  
-                ✅ Hero analysis  
-                ✅ Synergy analysis  
+            ✅ Рекомендации героев
 
-                ❌ Personalization  
-                ❌ Comfort picks  
-                ❌ Hero pool boosting  
-                '''
-            )
+            ✅ Анализ синергии
+
+            ✅ Анализ контрпиков
+
+            ✅ Поиск похожих героев
+
+            ⚠️ Персональные рекомендации недоступны
+            '''
+        )
 
             if st.button(
-                "CONTINUE AS GUEST",
+                "Продолжить как гость",
                 use_container_width=True
             ):
 
@@ -269,18 +271,7 @@ def render_auth_header():
     st.markdown(
         """
         <div class="auth-title">
-            DOTA DRAFT AI
-        </div>
-        """,
-        unsafe_allow_html=True
-    )
-
-    st.markdown(
-        """
-        <div class="auth-subtitle">
-
-            AI-Powered Draft Recommendation Platform
-
+            Рекомендательная система выбора героев Dota 2
         </div>
         """,
         unsafe_allow_html=True

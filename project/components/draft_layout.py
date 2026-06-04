@@ -2,16 +2,30 @@ import streamlit as st
 
 from utils.hero_utils import get_hero_image
 from utils.loaders import load_heroes
+from services.recommendation_service import (
+    calculate_hero_scores
+)
 
 from services.recommendation_service import (
+    load_synergy_matrix,
+    load_counter_matrix
+)
+
+from services.hero_role_service import (
+    get_role_score
+)
+from services.recommendation_service import (
     get_recommendations
+)
+from services.personalization_service import (
+    get_personal_score
 )
 
 # =========================================================
 # SETTINGS
 # =========================================================
 
-MAX_VISIBLE_HEROES = 999
+MAX_VISIBLE_HEROES = 129
 
 # =========================================================
 # ROLES
@@ -141,59 +155,134 @@ def calculate_top_metrics():
 
     draft_state = st.session_state["draft_state"]
 
-    radiant_picks = []
+    synergy_df = load_synergy_matrix()
+    counter_df = load_counter_matrix()
 
-    dire_picks = []
+    radiant_ids = []
+    dire_ids = []
 
-    for hero in draft_state["radiant"].values():
+    # =====================================
+    # BUILD TEAMS
+    # =====================================
 
-        if hero:
+    for hero_data in draft_state["radiant"].values():
 
-            radiant_picks.append(
-                hero["hero_id"]
+        if hero_data:
+
+            radiant_ids.append(
+                hero_data["hero_id"]
             )
 
-    for hero in draft_state["dire"].values():
+    for hero_data in draft_state["dire"].values():
 
-        if hero:
+        if hero_data:
 
-            dire_picks.append(
-                hero["hero_id"]
+            dire_ids.append(
+                hero_data["hero_id"]
             )
 
-    # =====================================================
-    # LIVE METRICS
-    # =====================================================
+    # =====================================
+    # RADIANT SCORE
+    # =====================================
 
-    synergy = min(
-        len(radiant_picks) * 14,
-        100
-    )
+    radiant_score = 0
 
-    counter = min(
-        len(dire_picks) * 11,
-        100
-    )
+    for hero_id in radiant_ids:
 
-    winrate = 50 + (
-        synergy - counter
-    ) * 0.3
+        allies = [
+            h for h in radiant_ids
+            if h != hero_id
+        ]
 
-    winrate = round(
+        role_score = 1
 
-        max(
-            1,
-            min(winrate, 99)
+        scores = calculate_hero_scores(
+
+            candidate_hero=hero_id,
+
+            ally_picks=allies,
+
+            enemy_picks=dire_ids,
+
+            synergy_df=synergy_df,
+
+            counter_df=counter_df,
+
+            role_score=role_score
         )
-    )
+
+        radiant_score += scores["score"]
+
+    # =====================================
+    # DIRE SCORE
+    # =====================================
+
+    dire_score = 0
+
+    for hero_id in dire_ids:
+
+        allies = [
+            h for h in dire_ids
+            if h != hero_id
+        ]
+
+        role_score = 1
+
+        scores = calculate_hero_scores(
+
+            candidate_hero=hero_id,
+
+            ally_picks=allies,
+
+            enemy_picks=radiant_ids,
+
+            synergy_df=synergy_df,
+
+            counter_df=counter_df,
+
+            role_score=role_score
+        )
+
+        dire_score += scores["score"]
+
+    # =====================================
+    # NORMALIZATION
+    # =====================================
+
+    total = radiant_score + dire_score
+
+    if total > 0:
+
+        radiant_percent = round(
+            radiant_score / total * 100,
+            1
+        )
+
+        dire_percent = round(
+            dire_score / total * 100,
+            1
+        )
+
+    else:
+
+        radiant_percent = 50
+        dire_percent = 50
 
     return {
 
-        "winrate": f"{winrate}%",
+        "radiant_score": round(
+            radiant_score,
+            2
+        ),
 
-        "synergy": synergy,
+        "dire_score": round(
+            dire_score,
+            2
+        ),
 
-        "counter": counter
+        "radiant_percent": radiant_percent,
+
+        "dire_percent": dire_percent
     }
 
 # =========================================================
@@ -300,69 +389,72 @@ def render_top_bar():
 
     metrics = calculate_top_metrics()
 
-    col1, col2, col3, col4, col5 = st.columns(
-        [2, 1, 1, 1, 1.5]
+    radiant_score = metrics["radiant_score"]
+
+    dire_score = metrics["dire_score"]
+
+    radiant_percent = metrics["radiant_percent"]
+
+    dire_percent = metrics["dire_percent"]
+
+    title_col, stat1, stat2, stat3, reset_col = st.columns(
+        [4, 1, 1, 1, 2]
     )
 
     # =====================================================
     # TITLE
     # =====================================================
 
-    with col1:
-
-        st.markdown(
-            """
-            <div class="main-title">
-                Draft Arena
-            </div>
-            """,
-            unsafe_allow_html=True
-        )
-
     # =====================================================
-    # METRICS
+    # WIN RATE
     # =====================================================
 
-    with col2:
+    with stat1:
 
         st.metric(
-            "Win Chance",
-            metrics["winrate"]
+            "Radiant",
+            f"{radiant_score}"
         )
 
-    with col3:
+    with stat2:
 
         st.metric(
-            "Synergy",
-            metrics["synergy"]
+            "Dire",
+            f"{dire_score}"
         )
-
-    with col4:
-
-        st.metric(
-            "Counter",
-            metrics["counter"]
-        )
-
     # =====================================================
     # RESET
     # =====================================================
 
-    with col5:
+    with reset_col:
 
         if st.button(
-            "RESET DRAFT",
+            "Сбросить драфт",
             use_container_width=True
         ):
 
             st.session_state["draft_state"] = {
-
                 "radiant": {},
-
                 "dire": {}
             }
 
             st.rerun()
+
+    # =====================================================
+    # PROGRESS BAR
+    # =====================================================
+
+    left, center, right = st.columns(
+        [2, 4, 2]
+    )
+
+    with center:
+
+        st.progress(
+            radiant_percent / 100
+        )   
+
+    st.markdown("<br>", unsafe_allow_html=True)
 
 # =========================================================
 # SLOT
@@ -596,7 +688,7 @@ def render_recommendation_row(
     # LIMIT
     # =====================================================
 
-    heroes = heroes[:MAX_VISIBLE_HEROES]
+    heroes = heroes
 
     # =====================================================
     # RECOMMENDATIONS
@@ -640,120 +732,54 @@ def render_recommendation_row(
         heroes,
 
         key=lambda hero:
-
             recommendation_map.get(
                 hero["hero_id"],
                 {}
             ).get(
-                "score",
+                "sort_score",
                 0
             ),
 
         reverse=True
     )
-
     # =====================================================
     # SCROLL
     # =====================================================
 
     with st.container(height=420):
 
-        for hero in heroes:
+        for i, hero in enumerate(heroes):
 
             hero_id = hero["hero_id"]
-
             hero_name = hero["hero_name"]
 
-            recommendation = recommendation_map.get(
+            image_path = get_hero_image(hero_id)
+
+            hero_score = recommendation_map.get(
                 hero_id,
                 {}
-            )
-
-            score = recommendation.get(
+            ).get(
                 "score",
                 0
             )
 
-            synergy = recommendation.get(
-                "synergy",
-                0
-            )
-
-            counter = recommendation.get(
-                "counter",
-                0
-            )
-
-            role_score = recommendation.get(
-                "role_score",
-                0
-            )
-
-            image_path = get_hero_image(
-                hero_id
-            )
-
-            # =================================================
-            # CARD
-            # =================================================
-
-            with st.container():
-
-                card_col1, card_col2 = st.columns(
-                    [1, 2]
+            if image_path:
+                st.image(
+                    image_path,
+                    use_container_width=True
                 )
 
-                # =============================================
-                # IMAGE
-                # =============================================
+            if st.button(
+                "Выбрать",
+                key=f"hero_{side}_{role}_{hero_id}_{idx}_{i}",
+                use_container_width=True
+            ):
 
-                with card_col1:
+                st.session_state["draft_state"][side][role] = {
+                    "hero_id": hero_id,
+                    "hero_name": hero_name
+                }
 
-                    if image_path:
+                st.rerun()
 
-                        st.image(
-                            image_path,
-                            width=70
-                        )
 
-                # =============================================
-                # INFO
-                # =============================================
-
-                with card_col2:
-
-                    st.markdown(
-                        f"""
-                        ### {hero_name}
-
-                        **Score:** {score}
-
-                        **Role:** {role_score}
-
-                        **Synergy:** {synergy}
-
-                        **Counter:** {counter}
-                        """
-                    )
-
-                    # =========================================
-                    # PICK BUTTON
-                    # =========================================
-
-                    if st.button(
-
-                        f"PICK {hero_name}",
-
-                        key=f"pick_{side}_{role}_{hero_id}"
-                    ):
-
-                        st.session_state["draft_state"][side][role] = {
-
-                            "hero_id": hero_id,
-
-                            "hero_name": hero_name
-                        }
-
-                        st.rerun()
-
-                st.markdown("---")
